@@ -84,21 +84,20 @@ def main():
             print(ut)
             
             if ut >= 21600:
-                print('day skipped')
-                times+=1
+               print('day skipped')
+               times+=1
 
                 
-            # if ut >= 21600 and (times != 0):
-            #     print(ut, times)
-            #     ut -= (21600 * times)
-            #     times += 1
+            if ut >= 21600 and (times != 0):
+                ut -= (21600 * times)
+                times += 1
                 
-            # elif ut >= 21600:
-            #     ut -= 21600
-            #     times += 1
+            elif ut >= 21600:
+                ut -= 21600
+                times += 1
                 
-            # else:
-            #     ut -= start_time
+            else:
+                ut -= start_time
                 
             with open("resources.txt", "a") as file:
                 file.write(f"{ut}, {mass - dry_mass}")
